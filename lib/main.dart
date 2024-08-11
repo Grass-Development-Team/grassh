@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:grassh_renew/src/ui/main.dart';
 import 'package:grassh_renew/src/util/platform.dart';
 import 'package:window_manager/window_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize PC Window
   if (PlatformUtil.isPC) {
     await windowManager.ensureInitialized();
 
@@ -34,12 +36,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
       ),
+      home: const MainPage(),
     );
   }
 }
