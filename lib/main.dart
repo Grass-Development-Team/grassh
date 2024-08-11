@@ -44,6 +44,9 @@ class MainApp extends StatelessWidget {
           seedColor: const Color(0xFF104E19),
           brightness: Brightness.dark,
         ),
+        fontFamilyFallback: const [
+          "Twemoji",
+        ],
       ),
       home: const MainPage(),
     );
