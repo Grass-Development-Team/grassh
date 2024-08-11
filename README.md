@@ -1,3 +1,3 @@
-# grassh_renew
+# GrassH
 
-A new Flutter project.
+A simple ssh client made with flutter.
