@@ -50,6 +50,11 @@ class _WindowButtonState extends State<WindowButton> {
               windowManager.close();
             },
           ),
+          !Platform.isWindows
+              ? const SizedBox(
+                  width: 10,
+                )
+              : const SizedBox(),
         ],
       );
     } else {
