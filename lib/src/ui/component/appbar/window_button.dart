@@ -181,7 +181,7 @@ class _ButtonState extends State<Button> with WindowListener {
       button = AnimatedContainer(
         duration: const Duration(milliseconds: 100),
         curve: Curves.ease,
-        width: 40,
+        width: 45,
         height: 30,
         decoration: BoxDecoration(
           color: getColor(),
