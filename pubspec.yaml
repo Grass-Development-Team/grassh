@@ -1,5 +1,5 @@
 name: grassh_renew
-description: "A new Flutter project."
+description: "A simple ssh client."
 publish_to: "none"
 version: 0.1.0
 
