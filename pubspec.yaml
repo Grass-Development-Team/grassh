@@ -22,3 +22,6 @@ flutter:
     - family: Twemoji
       fonts:
         - asset: assets/fonts/Twemoji.Mozilla.ttf
+    - family: Codicon
+      fonts:
+        - asset: assets/fonts/Codicon.ttf
