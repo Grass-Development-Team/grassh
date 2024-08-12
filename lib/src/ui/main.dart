@@ -13,6 +13,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: bar.AppBar(),
+      body: Row(),
     );
   }
 }
