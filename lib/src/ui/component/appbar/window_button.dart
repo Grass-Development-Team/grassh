@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:grassh_renew/src/ui/icons/codicon.dart';
 import 'package:grassh_renew/src/util/platform.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -34,6 +35,7 @@ class _WindowButtonState extends State<WindowButton> {
             hoverColor: Platform.isWindows
                 ? Colors.grey.withAlpha(80)
                 : Colors.green.shade700,
+            icon: Codicon.chromeMinimize,
             callback: Platform.isWindows ? _minimized : _maximized,
           ),
           Button(
@@ -41,11 +43,13 @@ class _WindowButtonState extends State<WindowButton> {
             hoverColor: Platform.isWindows
                 ? Colors.grey.withAlpha(80)
                 : Colors.yellow.shade800,
+            icon: Codicon.chromeMaximize,
             callback: Platform.isWindows ? _maximized : _minimized,
           ),
           Button(
             color: Colors.red,
             hoverColor: Colors.red.shade700,
+            icon: Codicon.chromeClose,
             callback: () {
               windowManager.close();
             },
@@ -142,6 +146,7 @@ class _ButtonState extends State<Button> with WindowListener {
         child: Icon(
           widget.icon,
           color: getIconColor(),
+          size: 15,
         ),
       );
     } else {
