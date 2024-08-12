@@ -19,6 +19,12 @@ class Codicon {
     matchTextDirection: true,
   );
 
+  static const IconData chromeRestore = IconData(
+    0xeabb,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
+
   static const IconData sidebarLeft = IconData(
     0xebf3,
     fontFamily: "Codicon",

@@ -13,15 +13,36 @@ class WindowButton extends StatefulWidget {
   State<WindowButton> createState() => _WindowButtonState();
 }
 
-class _WindowButtonState extends State<WindowButton> {
+class _WindowButtonState extends State<WindowButton> with WindowListener {
+  bool _isMaximized = false;
+
   _maximized() async {
-    await windowManager.isMaximized()
-        ? windowManager.unmaximize()
-        : windowManager.maximize();
+    if (await windowManager.isMaximized()) {
+      await windowManager.unmaximize();
+    } else {
+      await windowManager.maximize();
+    }
+    _isMaximized = await windowManager.isMaximized();
+    setState(() {});
   }
 
   _minimized() async {
     await windowManager.minimize();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    windowManager.addListener(this);
+    () async {
+      _isMaximized = await windowManager.isMaximized();
+    }();
+  }
+
+  @override
+  void dispose() {
+    windowManager.removeListener(this);
+    super.dispose();
   }
 
   @override
@@ -38,14 +59,24 @@ class _WindowButtonState extends State<WindowButton> {
             icon: Codicon.chromeMinimize,
             callback: Platform.isWindows ? _minimized : _maximized,
           ),
+          !Platform.isWindows
+              ? const SizedBox(
+                  width: 10,
+                )
+              : const SizedBox(),
           Button(
             color: Colors.yellow.shade600,
             hoverColor: Platform.isWindows
                 ? Colors.grey.withAlpha(80)
                 : Colors.yellow.shade800,
-            icon: Codicon.chromeMaximize,
+            icon: _isMaximized ? Codicon.chromeRestore : Codicon.chromeMaximize,
             callback: Platform.isWindows ? _maximized : _minimized,
           ),
+          !Platform.isWindows
+              ? const SizedBox(
+                  width: 10,
+                )
+              : const SizedBox(),
           Button(
             color: Colors.red,
             hoverColor: Colors.red.shade700,
@@ -63,6 +94,18 @@ class _WindowButtonState extends State<WindowButton> {
       );
     } else {
       return Container();
+    }
+  }
+
+  @override
+  void onWindowEvent(String event) {
+    switch (event) {
+      case 'maximized':
+      case 'unmaximized':
+        () async {
+          _isMaximized = await windowManager.isFocused();
+          setState(() {});
+        }();
     }
   }
 }
@@ -138,7 +181,7 @@ class _ButtonState extends State<Button> with WindowListener {
       button = AnimatedContainer(
         duration: const Duration(milliseconds: 100),
         curve: Curves.ease,
-        width: 50,
+        width: 40,
         height: 30,
         decoration: BoxDecoration(
           color: getColor(),
