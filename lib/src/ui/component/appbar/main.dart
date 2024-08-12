@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:grassh_renew/src/ui/component/appbar/action_button.dart';
 import 'package:grassh_renew/src/ui/component/appbar/window_button.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -22,6 +23,8 @@ class AppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             Expanded(child: SizedBox()),
+            ActionButton(),
+            SizedBox(width: 5),
             WindowButton(),
           ],
         ),

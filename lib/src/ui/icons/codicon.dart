@@ -18,4 +18,28 @@ class Codicon {
     fontFamily: "Codicon",
     matchTextDirection: true,
   );
+
+  static const IconData sidebarLeft = IconData(
+    0xebf3,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
+
+  static const IconData sidebarLeftOff = IconData(
+    0xec02,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
+
+  static const IconData sidebarRight = IconData(
+    0xebf4,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
+
+  static const IconData sidebarRightOff = IconData(
+    0xec00,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
 }
