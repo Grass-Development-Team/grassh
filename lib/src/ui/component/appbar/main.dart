@@ -24,7 +24,7 @@ class AppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             Expanded(child: SizedBox()),
             ActionButton(),
-            SizedBox(width: 5),
+            SizedBox(width: 10),
             WindowButton(),
           ],
         ),
