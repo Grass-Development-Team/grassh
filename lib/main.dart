@@ -17,12 +17,14 @@ void main() async {
       backgroundColor: Colors.transparent,
       skipTaskbar: false,
       titleBarStyle: TitleBarStyle.hidden,
+      title: "GrassH",
       windowButtonVisibility: false,
     );
 
     windowManager.waitUntilReadyToShow(windowOptions, () async {
       await windowManager.show();
       await windowManager.focus();
+      windowManager.setResizable(true);
     });
   }
 
