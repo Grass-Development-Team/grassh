@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grassh_renew/src/ui/main.dart';
 import 'package:grassh_renew/src/util/platform.dart';
+import 'package:grassh_renew/src/util/screen.dart';
 import 'package:window_manager/window_manager.dart';
 
 void main() async {
@@ -10,9 +11,10 @@ void main() async {
   if (PlatformUtil.isPC) {
     await windowManager.ensureInitialized();
 
-    WindowOptions windowOptions = const WindowOptions(
-      size: Size(1000, 800),
-      minimumSize: Size(1000, 800),
+    WindowOptions windowOptions = WindowOptions(
+      size: Size(1000, ScreenUtil.height < 800 ? ScreenUtil.height : 800),
+      minimumSize:
+          Size(1000, ScreenUtil.height < 800 ? ScreenUtil.height : 800),
       center: true,
       backgroundColor: Colors.transparent,
       skipTaskbar: false,
