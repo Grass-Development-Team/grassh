@@ -22,8 +22,6 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
     } else {
       await windowManager.maximize();
     }
-    _isMaximized = await windowManager.isMaximized();
-    setState(() {});
   }
 
   _minimized() async {
@@ -97,10 +95,10 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
   @override
   void onWindowEvent(String event) {
     switch (event) {
-      case 'maximized':
-      case 'unmaximized':
+      case 'maximize':
+      case 'unmaximize':
         () async {
-          _isMaximized = await windowManager.isFocused();
+          _isMaximized = await windowManager.isMaximized();
           setState(() {});
         }();
     }
