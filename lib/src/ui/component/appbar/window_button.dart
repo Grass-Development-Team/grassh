@@ -14,7 +14,7 @@ class WindowButton extends StatefulWidget {
 }
 
 class _WindowButtonState extends State<WindowButton> with WindowListener {
-  bool _isMaximized = false;
+  bool _isMaximized = true;
 
   _maximized() async {
     if (await windowManager.isMaximized()) {
@@ -34,9 +34,6 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
   void initState() {
     super.initState();
     windowManager.addListener(this);
-    () async {
-      _isMaximized = await windowManager.isMaximized();
-    }();
   }
 
   @override

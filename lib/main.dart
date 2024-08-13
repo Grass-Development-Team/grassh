@@ -11,8 +11,8 @@ void main() async {
     await windowManager.ensureInitialized();
 
     WindowOptions windowOptions = const WindowOptions(
-      size: Size(800, 600),
-      minimumSize: Size(800, 600),
+      size: Size(1000, 800),
+      minimumSize: Size(1000, 800),
       center: true,
       backgroundColor: Colors.transparent,
       skipTaskbar: false,
@@ -22,6 +22,7 @@ void main() async {
     );
 
     windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.maximize();
       await windowManager.show();
       await windowManager.focus();
       windowManager.setResizable(true);
