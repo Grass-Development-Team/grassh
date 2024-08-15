@@ -16,7 +16,10 @@ class SideBar extends StatelessWidget {
       curve: Curves.fastEaseInToSlowEaseOut,
       width: width,
       child: Center(
-        child: child,
+        child: Container(
+          color: Theme.of(context).cardColor,
+          child: child,
+        ),
       ),
     );
   }
