@@ -18,7 +18,7 @@ class _SideBarTabState extends State<SideBarTab> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         child: GestureDetector(
           onTap: () {
             widget.callback?.call();
