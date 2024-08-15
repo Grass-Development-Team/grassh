@@ -19,7 +19,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
         children: [
           SideBarTab(
             callback: () {
-              widget.controller.switchState();
+              widget.controller.switchSidebar();
               setState(() {});
             },
           ),
@@ -47,7 +47,7 @@ class LeftSideBarController {
     callback?.call();
   }
 
-  switchState() {
+  switchSidebar() {
     _open ? close() : open();
   }
 }
