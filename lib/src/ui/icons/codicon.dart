@@ -54,4 +54,10 @@ class Codicon {
     fontFamily: "Codicon",
     matchTextDirection: true,
   );
+
+  static const IconData add = IconData(
+    0xea60,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
 }
