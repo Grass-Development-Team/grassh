@@ -42,13 +42,33 @@ class _SideBarTabState extends State<SideBarTab> {
                 color: _isHover ? Theme.of(context).highlightColor : null,
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Row(
-                children: [
-                  Icon(
-                    widget.icon,
-                    size: 10,
-                  )
-                ],
+              child: Padding(
+                padding: EdgeInsets.all(8),
+                child: ClipRect(
+                  child: Stack(
+                    alignment: Alignment.centerLeft,
+                    children: [
+                      Icon(
+                        widget.icon,
+                        size: 14,
+                      ),
+                      Positioned(
+                        left: 20,
+                        child: Container(
+                          constraints: const BoxConstraints(maxWidth: 104),
+                          child: Text(
+                            widget.text ?? "",
+                            softWrap: false,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
