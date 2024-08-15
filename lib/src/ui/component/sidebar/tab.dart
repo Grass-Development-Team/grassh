@@ -43,7 +43,7 @@ class _SideBarTabState extends State<SideBarTab> {
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: ClipRect(
                   child: Stack(
                     alignment: Alignment.centerLeft,
