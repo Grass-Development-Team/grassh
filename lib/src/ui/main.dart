@@ -14,12 +14,19 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const bar.AppBar(),
-      body: Row(
-        children: [
-          LeftSideBar(
-            controller: LeftSideBarController(),
-          ),
-        ],
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            LeftSideBar(
+              controller: LeftSideBarController(),
+            ),
+            Expanded(
+              child: Container(),
+            )
+          ],
+        ),
       ),
     );
   }
