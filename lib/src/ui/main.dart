@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grassh_renew/src/ui/component/sidebar/left.dart';
 import 'component/appbar/main.dart' as bar;
 
 class MainPage extends StatefulWidget {
@@ -11,9 +12,15 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: bar.AppBar(),
-      body: Row(),
+    return Scaffold(
+      appBar: const bar.AppBar(),
+      body: Row(
+        children: [
+          LeftSideBar(
+            controller: LeftSideBarController(),
+          ),
+        ],
+      ),
     );
   }
 }
