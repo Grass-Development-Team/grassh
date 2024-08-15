@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grassh_renew/src/ui/component/sidebar/main.dart';
 import 'package:grassh_renew/src/ui/component/sidebar/tab.dart';
+import 'package:grassh_renew/src/ui/icons/codicon.dart';
 
 class LeftSideBar extends StatefulWidget {
   final LeftSideBarController controller;
@@ -18,6 +19,8 @@ class _LeftSideBarState extends State<LeftSideBar> {
       child: Column(
         children: [
           SideBarTab(
+            icon: Codicon.menu,
+            text: "Menu",
             callback: () {
               widget.controller.switchSidebar();
               setState(() {});
