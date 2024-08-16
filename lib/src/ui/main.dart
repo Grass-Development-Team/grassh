@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grassh_renew/src/config/global_config.dart';
 import 'package:grassh_renew/src/ui/component/sidebar/left.dart';
 import 'component/appbar/main.dart' as bar;
 
@@ -15,19 +16,34 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: const bar.AppBar(),
       body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            LeftSideBar(
-              controller: LeftSideBarController(),
-            ),
-            Expanded(
-              child: Container(),
-            )
-          ],
-        ),
-      ),
+          width: MediaQuery.of(context).size.width,
+          child: Stack(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  LeftSideBar(
+                    controller: LeftSideBarController(),
+                  ),
+                  Expanded(
+                    child: Container(),
+                  )
+                ],
+              ),
+              Positioned(
+                right: 0,
+                bottom: 0,
+                child: Text(
+                  "GrassH v${GlobalConfig.packageInfo.version}\nBuild ${GlobalConfig.packageInfo.buildNumber}. Not intended for external distribution.",
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Theme.of(context).primaryColorLight,
+                  ),
+                ),
+              ),
+            ],
+          )),
     );
   }
 }

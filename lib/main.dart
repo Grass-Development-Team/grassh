@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grassh_renew/src/config/global_config.dart';
 import 'package:grassh_renew/src/ui/main.dart';
 import 'package:grassh_renew/src/util/platform.dart';
 import 'package:grassh_renew/src/util/screen.dart';
@@ -6,6 +7,8 @@ import 'package:window_manager/window_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await GlobalConfig.init();
 
   // Initialize PC Window
   if (PlatformUtil.isPC) {

@@ -7,6 +7,7 @@ class GlobalConfig {
 
   static init() async {
     packageInfo = await PackageInfo.fromPlatform();
+
     // config = Config(
     //   path: "./config.toml",
     //   defaultConfig: {
