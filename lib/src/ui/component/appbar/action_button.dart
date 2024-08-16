@@ -18,16 +18,6 @@ class _ActionButtonState extends State<ActionButton> {
     return Row(
       children: [
         Button(
-          icon:
-              isSidebarLeftOpen ? Codicon.sidebarLeft : Codicon.sidebarLeftOff,
-          callback: () {
-            setState(() {
-              isSidebarLeftOpen = !isSidebarLeftOpen;
-            });
-          },
-        ),
-        const SizedBox(width: 5),
-        Button(
           icon: isSidebarRightOpen
               ? Codicon.sidebarRight
               : Codicon.sidebarRightOff,
