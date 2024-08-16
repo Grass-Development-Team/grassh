@@ -30,18 +30,20 @@ class _MainPageState extends State<MainPage> {
                   )
                 ],
               ),
-              Positioned(
-                right: 0,
-                bottom: 0,
-                child: Text(
-                  "GrassH v${GlobalConfig.packageInfo.version}\nBuild ${GlobalConfig.packageInfo.buildNumber}. Not intended for external distribution.",
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: Theme.of(context).primaryColorLight,
-                  ),
-                ),
-              ),
+              GlobalConfig.packageInfo.buildNumber != ""
+                  ? Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: Text(
+                        "GrassH v${GlobalConfig.packageInfo.version}\nBuild ${GlobalConfig.packageInfo.buildNumber}. Not intended for external distribution.",
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Theme.of(context).primaryColorLight,
+                        ),
+                      ),
+                    )
+                  : const SizedBox(),
             ],
           )),
     );
