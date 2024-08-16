@@ -27,12 +27,15 @@ class _LeftSideBarState extends State<LeftSideBar> {
             },
           ),
           // TODO: Terminal Tabs
-          // ListView.builder(
-          //   itemCount: 0,
-          //   itemBuilder: (ctx, index) {
-          //     return Tab();
-          //   },
+          // Expanded(
+          //   child: ListView.builder(
+          //     itemCount: 0,
+          //     itemBuilder: (ctx, index) {
+          //       return Tab();
+          //     },
+          //   ),
           // ),
+          Expanded(child: Container()),
           SideBarTab(
             icon: Codicon.add,
             text: "Add Terminal",
