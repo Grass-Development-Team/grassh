@@ -48,4 +48,16 @@ class Codicon {
     fontFamily: "Codicon",
     matchTextDirection: true,
   );
+
+  static const IconData menu = IconData(
+    0xeb94,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
+
+  static const IconData add = IconData(
+    0xea60,
+    fontFamily: "Codicon",
+    matchTextDirection: true,
+  );
 }
